@@ -1,0 +1,27 @@
+name: 'Psych_exp_baseline_conc'
+checkpoint_interval: 0
+log_interval: 5
+batch_size: 32
+epochs: 1000
+weight_decay: 0.0
+patience: 10
+class_weights: False
+data:
+  dataset: psych_exp
+  features: [LIWC, afinn, semeval15, emolex, bing_liu, mpqa]
+  embeddings: wiki.en.vec
+  embeddings_dim: 300
+  seq_len: 0
+model:
+  embed_finetune: False
+  emb_size: 300
+  embed_noise: 0.1
+  embed_dropout: 0.2
+  rnn_size: 150
+  rnn_layers: 1
+  rnn_dropout: 0.3
+  pack: True
+  clip: 5
+  conc_emb: True
+  conc_rnn: False
+

@@ -1,0 +1,27 @@
+name: "sst_fine_grained_non_linear_affine"
+checkpoint_interval: 0
+log_interval: 5
+batch_size: 64
+epochs: 1000
+weight_decay: 0.0
+patience: 8
+class_weights: False
+data:
+  dataset: sst_fine_grained
+  features: [LIWC, afinn, semeval15, emolex, bing_liu, mpqa]
+  features_dim: 73
+  embeddings: wiki.en.vec
+  embeddings_dim: 300
+  seq_len: 0
+model:
+  embed_finetune: False
+  emb_size: 300
+  embed_noise: 0.1
+  embed_dropout: 0.2
+  rnn_size: 500
+  rnn_layers: 1
+  rnn_dropout: 0.3
+  attention_type: non_linear_affine
+  attention_dropout: 0.1
+  pack: True
+  clip: 5
