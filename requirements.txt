@@ -7,7 +7,7 @@ seaborn==0.8
 umap_learn==0.3.0
 tqdm==4.19.4
 matplotlib==2.2.2
-numpy==1.13.1
+numpy==1.22.0
 visdom==0.1.8.5
 graphviz==0.8
 tabulate==0.8.2
